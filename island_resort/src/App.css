@@ -1,0 +1,23 @@
+body,
+html {
+    height: 100%;
+    font-family: 'OpenSans', sans-serif;
+}
+
+.bg {
+    background-image: url("./assets/background.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* position: relative; */
+    background-size: cover;
+}
+
+
+#food{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem;
+    align-items: center;
+    justify-content: center;
+}
