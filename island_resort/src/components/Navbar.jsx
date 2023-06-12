@@ -5,7 +5,7 @@ function Navbar() {
         <>
             <nav className="navbar navbar-expand-lg navbar-dark shadow-5-strong">
                 <div className="container-fluid">
-                    <a className="navbar-brand text-primary fw-bold bg-white px-2 rounded" href="#">
+                    <a className="navbar-brand text-primary fw-bold bg-white px-2 rounded" href={`/`}>
                     <i class="fa-solid fa-house"></i></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
