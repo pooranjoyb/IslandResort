@@ -10,31 +10,31 @@ function Booking() {
                 <p className="text-center w-responsive mx-auto mb-5">Wanna Book a Trip? Fill the form and get available discounts</p>
 
                 <div className="">
-                    <form class="row g-3" action=''>
-                        <div class="col-md-6">
-                            <label for="FirstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="FirstName" />
+                    <form className="row g-3" action=''>
+                        <div className="col-md-6">
+                            <label htmlFor="FirstName" className="form-label">First Name</label>
+                            <input type="text" className="form-control" id="FirstName" />
                         </div>
-                        <div class="col-md-6">
-                            <label for="LastName" class="form-label">Last
+                        <div className="col-md-6">
+                            <label htmlFor="LastName" className="form-label">Last
                                 Name</label>
-                            <input type="text" class="form-control" id="LastName" />
+                            <input type="text" className="form-control" id="LastName" />
                         </div>
-                        <div class="col-12">
-                            <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" />
+                        <div className="col-12">
+                            <label htmlFor="inputAddress" className="form-label">Address</label>
+                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
                         </div>
-                        <div class="col-12">
-                            <label for="inputAddress2" class="form-label">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
+                        <div className="col-12">
+                            <label htmlFor="inputAddress2" className="form-label">Address 2</label>
+                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
                         </div>
-                        <div class="col-md-6">
-                            <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" id="inputCity" />
+                        <div className="col-md-6">
+                            <label htmlFor="inputCity" className="form-label">City</label>
+                            <input type="text" className="form-control" id="inputCity" />
                         </div>
-                        <div class="col-md-4">
-                            <label for="inputState" class="form-label">State</label>
-                            <select id="inputState" class="form-select">
+                        <div className="col-md-4">
+                            <label htmlFor="inputState" className="form-label">State</label>
+                            <select id="inputState" className="form-select">
                                 <option selected>Choose...</option>
                                 <option>Delhi</option>
                                 <option>Karnataka</option>
@@ -42,44 +42,44 @@ function Booking() {
                                 <option>West Bengal</option>
                             </select>
                         </div>
-                        <div class="col-md-2">
-                            <label for="inputZip" class="form-label">Zip</label>
-                            <input type="text" class="form-control" id="inputZip" />
+                        <div className="col-md-2">
+                            <label htmlFor="inputZip" className="form-label">Zip</label>
+                            <input type="text" className="form-control" id="inputZip" />
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input mx-4" type="checkbox" id="inlineCheckbox1" value="option1" />
-                            <label class="form-check-label" for="inlineCheckbox1">Single Room AC</label>
-                            <input class="form-check-input mx-4" type="checkbox" id="inlineCheckbox2" value="option2" />
-                            <label class="form-check-label" for="inlineCheckbox2">Single Room Non AC</label>
-                            <input class="form-check-input mx-4" type="checkbox" id="inlineCheckbox2" value="option2" />
-                            <label class="form-check-label" for="inlineCheckbox2">Double Room AC</label>
-                            <input class="form-check-input mx-4" type="checkbox" id="inlineCheckbox2" value="option2" />
-                            <label class="form-check-label" for="inlineCheckbox2">Double Room Non AC</label>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input mx-4" type="checkbox" id="inlineCheckbox1" value="option1" />
+                            <label className="form-check-label" htmlFor="inlineCheckbox1">Single Room AC</label>
+                            <input className="form-check-input mx-4" type="checkbox" id="inlineCheckbox2" value="option2" />
+                            <label className="form-check-label" htmlFor="inlineCheckbox2">Single Room Non AC</label>
+                            <input className="form-check-input mx-4" type="checkbox" id="inlineCheckbox2" value="option2" />
+                            <label className="form-check-label" htmlFor="inlineCheckbox2">Double Room AC</label>
+                            <input className="form-check-input mx-4" type="checkbox" id="inlineCheckbox2" value="option2" />
+                            <label className="form-check-label" htmlFor="inlineCheckbox2">Double Room Non AC</label>
                         </div>
-                        <label for="date" class="col-1 col-form-label">Checkin Date</label>
-                        <div class="col-5">
-                            <div class="input-group date" id="datepicker">
-                                <input type="text" class="form-control" id="date" />
-                                <span class="input-group-append">
-                                    <span class="input-group-text bg-light d-block">
-                                        <i class="fa fa-calendar"></i>
+                        <label htmlFor="date" className="col-1 col-form-label">Checkin Date</label>
+                        <div className="col-5">
+                            <div className="input-group date" id="datepicker">
+                                <input type="text" className="form-control" id="date" />
+                                <span className="input-group-append">
+                                    <span className="input-group-text bg-light d-block">
+                                        <i className="fa fa-calendar"></i>
                                     </span>
                                 </span>
                             </div>
                         </div>
-                        <label for="date" class="col-1 col-form-label">Checkout Date</label>
-                        <div class="col-5">
-                            <div class="input-group date" id="datepicker">
-                                <input type="text" class="form-control" id="date" />
-                                <span class="input-group-append">
-                                    <span class="input-group-text bg-light d-block">
-                                        <i class="fa fa-calendar"></i>
+                        <label htmlFor="date" className="col-1 col-form-label">Checkout Date</label>
+                        <div className="col-5">
+                            <div className="input-group date" id="datepicker">
+                                <input type="text" className="form-control" id="date" />
+                                <span className="input-group-append">
+                                    <span className="input-group-text bg-light d-block">
+                                        <i className="fa fa-calendar"></i>
                                     </span>
                                 </span>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <button type='submit' class="btn btn-primary">Checkout and Pay</button>
+                        <div className="col-12">
+                            <button type='submit' className="btn btn-primary">Checkout and Pay</button>
                         </div>
                     </form>
                 </div>
