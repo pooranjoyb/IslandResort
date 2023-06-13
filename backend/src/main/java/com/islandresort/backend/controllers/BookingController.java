@@ -25,7 +25,7 @@ public class BookingController {
   }
 
   private void saveBookingToDatabase(BookingData bookingData) {
-    String insertSql = "INSERT INTO bookings (name, address, city, state, zip, accommodation) VALUES (?, ?, ?, ?, ?, ?)";
+    String insertSql = "INSERT INTO bookings (name, address, city, state, zip, accommodation, checkin, checkout) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookings", "root", "root");
         PreparedStatement statement = connection.prepareStatement(insertSql)) {
@@ -35,11 +35,13 @@ public class BookingController {
       statement.setString(3, bookingData.getCity());
       statement.setString(4, bookingData.getState());
       statement.setString(5, bookingData.getZip());
-        if (bookingData.getAccommodation() != null) {
-            statement.setString(6, bookingData.getAccommodation());
-        } else {
-            statement.setNull(6, Types.VARCHAR);
-        }
+      if (bookingData.getAccommodation() != null) {
+        statement.setString(6, bookingData.getAccommodation());
+      } else {
+        statement.setNull(6, Types.VARCHAR);
+      }
+      statement.setString(7, bookingData.getcheckInDate());
+      statement.setString(8, bookingData.getcheckOutDate());
 
       statement.executeUpdate();
 

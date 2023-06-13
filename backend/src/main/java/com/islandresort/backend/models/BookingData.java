@@ -7,6 +7,8 @@ public class BookingData {
     private String state;
     private String zip;
     private String accommodation;
+    private String checkInDate;
+    private String checkOutDate;
 
     public String getName() {
         return name;
@@ -54,5 +56,21 @@ public class BookingData {
 
     public void setAccommodation(String accommodation) {
         this.accommodation = accommodation;
+    }
+
+    public String getcheckInDate() {
+        return checkInDate;
+    }
+
+    public void setcheckInDate(String checkIndate) {
+        this.checkInDate = checkIndate;
+    }
+    
+    public String getcheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setcheckOutDate(String checkOutdate) {
+        this.checkOutDate = checkOutdate;
     }
 }
