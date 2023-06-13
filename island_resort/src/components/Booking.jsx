@@ -11,6 +11,8 @@ function Booking() {
     const [Zip, setZip] = useState('')
     const [State, setState] = useState('')
     const [Accommodation, setAccommodation] = useState('')
+    const [checkInDate, setCheckInDate] = useState('')
+    const [checkOutDate, setCheckOutDate] = useState('')
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -21,7 +23,9 @@ function Booking() {
             city: City,
             state: State,
             zip: Zip,
-            accommodation: Accommodation
+            accommodation: Accommodation,
+            checkInDate: checkInDate,
+            checkOutDate: checkOutDate
         }
 
         const bookingData = JSON.stringify(formData);
@@ -50,9 +54,9 @@ function Booking() {
     return (
         <>
             <Navbar />
-            <section className="mb-5 my-2" style={{ margin: "0 10rem" }}>
+            <section className="mb-2 my-2" style={{ margin: "0 10rem" }}>
                 <h2 className="h1-responsive font-weight-bold text-center my-4">Bookings</h2>
-                <p className="text-center w-responsive mx-auto mb-5">Wanna Book a Trip? Fill the form and get available discounts</p>
+                <p className="text-center w-responsive mx-auto mb-2">Wanna Book a Trip? Fill the form and get available discounts</p>
 
                 <div className="">
                     <form className="row g-3" onSubmit={handleSubmit}>
@@ -63,19 +67,19 @@ function Booking() {
                         <div className="col-md-6">
                             <label htmlFor="LastName" className="form-label">Last
                                 Name</label>
-                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)}/>
+                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} />
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAddress" className="form-label">Address</label>
-                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name='add1' onChange={(e) => setAddress1(e.target.value)}/>
+                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name='add1' onChange={(e) => setAddress1(e.target.value)} />
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAddress2" className="form-label">Address 2</label>
-                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name='add2' onChange={(e) => setAddress2(e.target.value)}/>
+                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name='add2' onChange={(e) => setAddress2(e.target.value)} />
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputCity" className="form-label">City</label>
-                            <input type="text" className="form-control" id="inputCity" onChange={(e) => setCity(e.target.value)}/>
+                            <input type="text" className="form-control" id="inputCity" onChange={(e) => setCity(e.target.value)} />
                         </div>
                         <div className="col-md-4">
                             <label htmlFor="inputState" className="form-label">State</label>
@@ -89,7 +93,7 @@ function Booking() {
                         </div>
                         <div className="col-md-2">
                             <label htmlFor="inputZip" className="form-label">Zip</label>
-                            <input type="text" className="form-control" id="inputZip" onChange={(e) => setZip(e.target.value)}/>
+                            <input type="text" className="form-control" id="inputZip" onChange={(e) => setZip(e.target.value)} />
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAccomodation" className="form-label">Accomodation</label>
@@ -101,29 +105,16 @@ function Booking() {
                                 <option>Dual Bed Non Air Conditioner</option>
                             </select>
                         </div>
-                        <label htmlFor="date" className="col-1 col-form-label">Checkin Date</label>
-                        <div className="col-5">
-                            <div className="input-group date" id="datepicker">
-                                <input type="text" className="form-control" id="date" />
-                                <span className="input-group-append">
-                                    <span className="input-group-text bg-light d-block">
-                                        <i className="fa fa-calendar"></i>
-                                    </span>
-                                </span>
-                            </div>
+                        <div class="col-md-6 mx-auto">
+                            <label for="inputDate4" class="form-label">Your Check In Date</label>
+                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)}/>
                         </div>
-                        <label htmlFor="date" className="col-1 col-form-label">Checkout Date</label>
-                        <div className="col-5">
-                            <div className="input-group date" id="datepicker">
-                                <input type="text" className="form-control" id="date" />
-                                <span className="input-group-append">
-                                    <span className="input-group-text bg-light d-block">
-                                        <i className="fa fa-calendar"></i>
-                                    </span>
-                                </span>
-                            </div>
+                        <div class="col-md-6 mx-auto">
+                            <label for="inputDate4" class="form-label">Your Check Out Date</label>
+                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)}/>
                         </div>
-                        <div className="col-12">
+                        
+                        <div className="mx-auto text-center">
                             <button type='submit' className="btn btn-primary">Checkout and Pay</button>
                         </div>
                     </form>
