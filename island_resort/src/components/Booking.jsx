@@ -10,7 +10,7 @@ function Booking() {
     const [City, setCity] = useState('')
     const [Zip, setZip] = useState('')
     const [State, setState] = useState('')
-    const [Accomodation, setAccomodation] = useState('')
+    const [Accommodation, setAccommodation] = useState('')
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -21,7 +21,7 @@ function Booking() {
             city: City,
             state: State,
             zip: Zip,
-            accomodation: Accomodation
+            accommodation: Accommodation
         }
 
         const bookingData = JSON.stringify(formData);
@@ -93,7 +93,7 @@ function Booking() {
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAccomodation" className="form-label">Accomodation</label>
-                            <select id="inputAccomodation" className="form-select" onChange={(e) => setAccomodation(e.target.value)}>
+                            <select id="inputAccomodation" className="form-select" onChange={(e) => setAccommodation(e.target.value)}>
                                 <option selected>Choose...</option>
                                 <option>Single Bed Air Conditioner</option>
                                 <option>Dual Bed Air Conditioner</option>
