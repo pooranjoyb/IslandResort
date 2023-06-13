@@ -1,0 +1,37 @@
+You'll have to setup MYSQL Database in your local Environment to get thsi Project working.
+
+Once MYSQL database has been installed make sure that you create a password for the 'root' 
+
+If password is NOT SET, please SET THE PASSWORD, because we'll need that in connecting to the Database.
+
+When MYSQL is ready,
+
+- Go to backend/src/main/controllers/BookingController.java file and update this line with your credentials
+
+getConnection("jdbc:mysql://localhost:3306/bookings", "root", "root");
+
+Here "bookings" is the name of Database in MYSQL.
+
+Now We need to Setup MYSQL
+
+- create a database named 'bookings'
+
+CREATE DATABASE bookings;
+use bookings;
+
+- Then Create the Table
+
+CREATE TABLE bookings (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    state VARCHAR(255) NOT NULL,
+    zip VARCHAR(10) NOT NULL,
+    accommodation VARCHAR(255) NOT NULL
+    checkin VARCHAR(255) NULL;
+    checkout VARCHAR(255) NULL;
+);
+
+Make sure you have latest JAVA version i.e. JDK 20 and MAVEN installed
+Then we can Build & Run the Spring-Boot Application
