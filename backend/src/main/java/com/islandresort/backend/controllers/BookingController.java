@@ -27,7 +27,7 @@ public class BookingController {
   private void saveBookingToDatabase(BookingData bookingData) {
     String insertSql = "INSERT INTO bookings (name, address, city, state, zip, accommodation, checkin, checkout) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-    try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookings", "root", "root");
+    try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookings", "root", "pass");
         PreparedStatement statement = connection.prepareStatement(insertSql)) {
 
       statement.setString(1, bookingData.getName());
