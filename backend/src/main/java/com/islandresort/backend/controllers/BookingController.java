@@ -23,9 +23,7 @@ public class BookingController {
 
     saveBookingToDatabase(bookingData);
   }
-
-  @PostMapping("/api/booking/delete")
-
+  
   private void saveBookingToDatabase(BookingData bookingData) {
     String insertSql = "INSERT INTO bookings (name, address, city, state, zip, accommodation, checkin, checkout) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 

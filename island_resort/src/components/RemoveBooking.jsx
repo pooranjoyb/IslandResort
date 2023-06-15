@@ -34,7 +34,7 @@ function RemoveBooking() {
             if (response.ok) {
                 alert('Booking Cancelled Successfully');
             } else {
-                alert('Failed to Cencel Booking, Recheck your Information');
+                alert('Failed to Cancel Booking, Recheck your Information');
             }
         } catch (error) {
             console.error('Error Cancelling Booking', error);
