@@ -107,13 +107,13 @@ function Booking() {
                         </div>
                         <div class="col-md-6 mx-auto">
                             <label for="inputDate4" class="form-label">Your Check In Date</label>
-                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)}/>
+                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} />
                         </div>
                         <div class="col-md-6 mx-auto">
                             <label for="inputDate4" class="form-label">Your Check Out Date</label>
-                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)}/>
+                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} />
                         </div>
-                        
+
                         <div className="mx-auto text-center">
                             <button type='submit' className="btn btn-primary">Checkout and Pay</button>
                         </div>
@@ -122,6 +122,13 @@ function Booking() {
 
 
             </section>
+
+            <p className="text-center w-responsive mx-auto mb-2 my-5">Want to Cancel your Booking ?</p>
+            <div className="mx-auto text-center">
+                <a href="/booking/cancel">
+                    <button type='submit' className="btn btn-primary">Cancel Booking</button>
+                </a>
+            </div>
         </>
     )
 }

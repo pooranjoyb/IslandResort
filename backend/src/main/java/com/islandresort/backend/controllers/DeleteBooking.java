@@ -11,39 +11,27 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Types;
 
 @RestController
-public class BookingController {
+public class DeleteBooking {
 
   @CrossOrigin(origins = "http://localhost:5173")
-  @PostMapping("/api/booking")
+  @PostMapping("/api/booking/cancel")
   public void submitBooking(@RequestBody BookingData bookingData) {
-    System.out.println("Received booking data: " + bookingData);
+    System.out.println("Received cancellation data: " + bookingData);
 
     saveBookingToDatabase(bookingData);
   }
 
-  @PostMapping("/api/booking/delete")
-
   private void saveBookingToDatabase(BookingData bookingData) {
-    String insertSql = "INSERT INTO bookings (name, address, city, state, zip, accommodation, checkin, checkout) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    String insertSql = "DELETE FROM bookings WHERE name = ? AND checkin = ? AND checkout = ?";
 
     try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookings", "root", "pass");
         PreparedStatement statement = connection.prepareStatement(insertSql)) {
 
       statement.setString(1, bookingData.getName());
-      statement.setString(2, bookingData.getAddress());
-      statement.setString(3, bookingData.getCity());
-      statement.setString(4, bookingData.getState());
-      statement.setString(5, bookingData.getZip());
-      if (bookingData.getAccommodation() != null) {
-        statement.setString(6, bookingData.getAccommodation());
-      } else {
-        statement.setNull(6, Types.VARCHAR);
-      }
-      statement.setString(7, bookingData.getcheckInDate());
-      statement.setString(8, bookingData.getcheckOutDate());
+      statement.setString(2, bookingData.getcheckInDate());
+      statement.setString(3, bookingData.getcheckOutDate());
 
       statement.executeUpdate();
 
