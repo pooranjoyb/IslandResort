@@ -44,8 +44,14 @@ function UpdateBooking() {
             });
 
             const data = await response.json();
-            setBookingData(data);
-            console.log(bookingData)
+            if (data.name == null){
+                setBookingData(null)
+                alert("Invalid Credentials")
+            }
+            else{
+                console.log(bookingData)
+                setBookingData(data);
+            }
         } catch (error) {
             console.error('Error Getting Response', error);
         }
@@ -98,21 +104,21 @@ function UpdateBooking() {
                     <form className="row g-3" onSubmit={validate}>
                         <div className="col-md-6">
                             <label htmlFor="FirstName" className="form-label">First Name</label>
-                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} />
+                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} required/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="LastName" className="form-label">Last
                                 Name</label>
-                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} />
+                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} required/>
                         </div>
 
                         <div className="col-md-6 mx-auto">
                             <label htmlFor="inputDate4" className="form-label">Your Check In Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} />
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} required/>
                         </div>
                         <div className="col-md-6 mx-auto">
                             <label htmlFor="inputDate4" className="form-label">Your Check Out Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} />
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} required/>
                         </div>
                         <div className="mx-auto text-center my-5">
                             <button type='submit' className="btn btn-primary">Validate</button>
@@ -131,19 +137,19 @@ function UpdateBooking() {
                     <form className="row g-3" onSubmit={updateData}>
                         <div className="col-12">
                             <label htmlFor="inputAddress" className="form-label">Address</label>
-                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name='add1' onChange={(e) => setnewAddress1(e.target.value)} />
+                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name='add1' onChange={(e) => setnewAddress1(e.target.value)} required/>
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAddress2" className="form-label">Address 2</label>
-                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name='add2' onChange={(e) => setnewAddress2(e.target.value)} />
+                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name='add2' onChange={(e) => setnewAddress2(e.target.value)} required/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputCity" className="form-label">City</label>
-                            <input type="text" className="form-control" id="inputCity" onChange={(e) => setnewCity(e.target.value)} />
+                            <input type="text" className="form-control" id="inputCity" onChange={(e) => setnewCity(e.target.value)} required/>
                         </div>
                         <div className="col-md-4">
                             <label htmlFor="inputState" className="form-label">State</label>
-                            <select id="inputState" className="form-select" onChange={(e) => setnewState(e.target.value)}>
+                            <select id="inputState" className="form-select" onChange={(e) => setnewState(e.target.value)} required>
                                 <option selected>Choose...</option>
                                 <option>Delhi</option>
                                 <option>Karnataka</option>
@@ -153,11 +159,11 @@ function UpdateBooking() {
                         </div>
                         <div className="col-md-2">
                             <label htmlFor="inputZip" className="form-label">Zip</label>
-                            <input type="text" className="form-control" id="inputZip" onChange={(e) => setnewZip(e.target.value)} />
+                            <input type="text" className="form-control" id="inputZip" onChange={(e) => setnewZip(e.target.value)} required/>
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAccomodation" className="form-label">Accomodation</label>
-                            <select id="inputAccomodation" className="form-select" onChange={(e) => setnewAccommodation(e.target.value)}>
+                            <select id="inputAccomodation" className="form-select" onChange={(e) => setnewAccommodation(e.target.value)} required>
                                 <option selected>Choose...</option>
                                 <option>Single Bed Air Conditioner</option>
                                 <option>Dual Bed Air Conditioner</option>
@@ -167,11 +173,11 @@ function UpdateBooking() {
                         </div>
                         <div className="col-md-6 mx-auto">
                             <label htmlFor="inputDate4" className="form-label">Your Check In Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setnewCheckInDate(e.target.value)} />
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setnewCheckInDate(e.target.value)} required />
                         </div>
                         <div className="col-md-6 mx-auto">
                             <label htmlFor="inputDate4" className="form-label">Your Check Out Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setnewCheckOutDate(e.target.value)} />
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setnewCheckOutDate(e.target.value)} required/>
                         </div>
 
                         <div className="mx-auto text-center my-5">
@@ -185,6 +191,13 @@ function UpdateBooking() {
             
             ) : null}
             
+
+            <p className="text-center w-responsive mx-auto mb-5 mt-5">
+                <b>
+
+                    Want to Review your Bookings? <br /><a href="/booking/review">CLICK HERE</a>
+                </b>
+            </p>
 
             <p className="text-center w-responsive mx-auto mb-2 my-5">Want to Cancel your Booking ?
                 <a href="/booking/cancel">

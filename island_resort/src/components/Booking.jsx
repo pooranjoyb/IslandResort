@@ -67,28 +67,28 @@ function Booking() {
                     <form className="row g-3" onSubmit={handleSubmit}>
                         <div className="col-md-6">
                             <label htmlFor="FirstName" className="form-label">First Name</label>
-                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} />
+                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} required/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="LastName" className="form-label">Last
                                 Name</label>
-                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} />
+                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} required/>
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAddress" className="form-label">Address</label>
-                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name='add1' onChange={(e) => setAddress1(e.target.value)} />
+                            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" name='add1' onChange={(e) => setAddress1(e.target.value)} required/>
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAddress2" className="form-label">Address 2</label>
-                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name='add2' onChange={(e) => setAddress2(e.target.value)} />
+                            <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name='add2' onChange={(e) => setAddress2(e.target.value)} required/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputCity" className="form-label">City</label>
-                            <input type="text" className="form-control" id="inputCity" onChange={(e) => setCity(e.target.value)} />
+                            <input type="text" className="form-control" id="inputCity" onChange={(e) => setCity(e.target.value)} required/>
                         </div>
                         <div className="col-md-4">
                             <label htmlFor="inputState" className="form-label">State</label>
-                            <select id="inputState" className="form-select" onChange={(e) => setState(e.target.value)}>
+                            <select id="inputState" className="form-select" onChange={(e) => setState(e.target.value)} required>
                                 <option selected>Choose...</option>
                                 <option>Delhi</option>
                                 <option>Karnataka</option>
@@ -98,11 +98,11 @@ function Booking() {
                         </div>
                         <div className="col-md-2">
                             <label htmlFor="inputZip" className="form-label">Zip</label>
-                            <input type="text" className="form-control" id="inputZip" onChange={(e) => setZip(e.target.value)} />
+                            <input type="text" className="form-control" id="inputZip" onChange={(e) => setZip(e.target.value)} required/>
                         </div>
                         <div className="col-12">
                             <label htmlFor="inputAccomodation" className="form-label">Accomodation</label>
-                            <select id="inputAccomodation" className="form-select" onChange={(e) => setAccommodation(e.target.value)}>
+                            <select id="inputAccomodation" className="form-select" onChange={(e) => setAccommodation(e.target.value)} required>
                                 <option selected>Choose...</option>
                                 <option>Single Bed Air Conditioner</option>
                                 <option>Dual Bed Air Conditioner</option>
@@ -111,16 +111,16 @@ function Booking() {
                             </select>
                         </div>
                         <div className="col-md-6 onChangemx-auto">
-                            <label for="inputDate4" className="form-label">Your Check In Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} />
+                            <label htmlFor="inputDate4" className="form-label">Your Check In Date</label>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} required/>
                         </div>
                         <div className="col-md-6 mx-auto">
-                            <label for="inputDate4" className="form-label">Your Check Out Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} />
+                            <label htmlFor="inputDate4" className="form-label">Your Check Out Date</label>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} required/>
                         </div>
 
-                        <div className="mx-auto text-center">
-                            <button type='submit' className="btn btn-primary">Checkout and Pay</button>
+                        <div className="mx-auto my-5 text-center">
+                            <button type='submit' className="btn btn-primary">Checkout and Book</button>
                         </div>
                     </form>
                 </div>

@@ -49,25 +49,25 @@ function RemoveBooking() {
                 <h2 className="h1-responsive font-weight-bold text-center my-4">Cancel Bookings</h2>
                 <p className="text-center w-responsive mx-auto mb-2">Sorry to hear about your cancellation</p>
 
-                <div className="">
-                    <form className="row g-3" onSubmit={handleSubmit}>
+                <div className="my-5">
+                    <form className="row g-3 my-5" onSubmit={handleSubmit}>
                         <div className="col-md-6">
                             <label htmlFor="FirstName" className="form-label">First Name</label>
-                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} />
+                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} required/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="LastName" className="form-label">Last
                                 Name</label>
-                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} />
+                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} required/>
                         </div>
             
                         <div className="col-md-6 mx-auto">
                             <label for="inputDate4" className="form-label">Your Check In Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)}/>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} required/>
                         </div>
                         <div className="col-md-6 mx-auto">
                             <label for="inputDate4" className="form-label">Your Check Out Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)}/>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} required/>
                         </div>
                         
                         <div className="mx-auto text-center">

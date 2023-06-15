@@ -59,7 +59,7 @@ function Contact() {
                                 </div>
                             </div>
                         <div className="text-center text-light">
-                            <a className="btn btn-primary">Send</a>
+                            <a className="btn disabled btn-primary">Send</a>
                         </div>
                         </form>
                     </div>

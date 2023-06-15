@@ -29,8 +29,14 @@ function ReadBooking() {
             });
 
             const data = await response.json();
-            setBookingData(data);
-            console.log(bookingData)
+            if (data.name == null){
+                setBookingData(null)
+                alert("Please Recheck the details")
+            }
+            else{
+                console.log(bookingData)
+                setBookingData(data);
+            }
         } catch (error) {
             console.error('Error Getting Response', error);
         }
@@ -49,20 +55,20 @@ function ReadBooking() {
                     <form className="row g-3" onSubmit={handleSubmit}>
                         <div className="col-md-6">
                             <label htmlFor="FirstName" className="form-label">First Name</label>
-                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} />
+                            <input type="text" className="form-control" id="FirstName" name='fname' onChange={(e) => setFName(e.target.value)} required/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="LastName" className="form-label">Last
                                 Name</label>
-                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} />
+                            <input type="text" className="form-control" id="LastName" name='lname' onChange={(e) => setLName(e.target.value)} required/>
                         </div>
                         <div className="col-md-6 mx-auto">
-                            <label for="inputDate4" className="form-label">Your Check In Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} />
+                            <label htmlFor="inputDate4" className="form-label">Your Check In Date</label>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} required/>
                         </div>
                         <div className="col-md-6 mx-auto">
-                            <label for="inputDate4" className="form-label">Your Check Out Date</label>
-                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} />
+                            <label htmlFor="inputDate4" className="form-label">Your Check Out Date</label>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} required/>
                         </div>
                         <div className="mx-auto text-center">
                             <button type='submit' className="my-4 btn btn-primary">Review</button>
@@ -71,7 +77,7 @@ function ReadBooking() {
                 </div>
 
 
-                {bookingData && Object.keys(bookingData) != null ? (
+                {bookingData ? (
                     <div className='mx-auto'>
                         <h3>User Information:</h3>
                         <p><b>Name:</b> {bookingData.name}</p>
@@ -83,7 +89,7 @@ function ReadBooking() {
                         <p><b>Checkin Date:</b> {bookingData.checkInDate}</p>
                         <p><b>Checkout Date:</b> {bookingData.checkOutDate}</p>
                     </div>
-                ) : null}
+                ) : <h3>No Details found</h3>}
             </section>
             <b>
                 <p className="text-center w-responsive mx-auto mb-5">Already Booked and Want to Update your Details? <br /><a href="/booking/update">CLICK HERE</a></p>
