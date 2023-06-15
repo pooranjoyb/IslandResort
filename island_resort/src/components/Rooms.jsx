@@ -4,7 +4,7 @@ function Room() {
     return (
         <>
             <div className='flex text-center my-4' id='rooms'>
-                <p class="h2 text-primary fw-bold">Explore Our Rooms</p>
+                <p className="h2 text-primary fw-bold">Explore Our Rooms</p>
                 <span>Where Luxury is Priority</span>
             </div>
             <div style={{justifyContent: "center", display: "flex"}}>

@@ -4,7 +4,7 @@ function Homepage() {
   return (
     <>
     <div className='flex text-center my-4'>
-    <p class="h2 text-primary fw-bold">Welcome to Island Resort</p>
+    <p className="h2 text-primary fw-bold">Welcome to Island Resort</p>
     </div>
     </>
   )

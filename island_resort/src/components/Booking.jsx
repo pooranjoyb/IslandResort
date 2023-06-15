@@ -110,13 +110,13 @@ function Booking() {
                                 <option>Dual Bed Non Air Conditioner</option>
                             </select>
                         </div>
-                        <div class="col-md-6 mx-auto">
-                            <label for="inputDate4" class="form-label">Your Check In Date</label>
-                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} />
+                        <div className="col-md-6 onChangemx-auto">
+                            <label for="inputDate4" className="form-label">Your Check In Date</label>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckInDate(e.target.value)} />
                         </div>
-                        <div class="col-md-6 mx-auto">
-                            <label for="inputDate4" class="form-label">Your Check Out Date</label>
-                            <input type="date" class="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} />
+                        <div className="col-md-6 mx-auto">
+                            <label for="inputDate4" className="form-label">Your Check Out Date</label>
+                            <input type="date" className="form-control" id="inputDate" placeholder="dd/mm/yyyy" min="1930-01-01" max="2030-01-01" onChange={(e) => setCheckOutDate(e.target.value)} />
                         </div>
 
                         <div className="mx-auto text-center">
