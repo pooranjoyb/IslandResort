@@ -4,6 +4,8 @@ import App from './App.jsx'
 import Contact from './components/Contact.jsx';
 import Booking from './components/Booking.jsx';
 import RemoveBooking from './components/RemoveBooking.jsx';
+import UpdateBooking from './components/UpdateBooking.jsx';
+import ReadBooking from './components/ReadBooking.jsx';
 
 import {
   createBrowserRouter,
@@ -26,6 +28,14 @@ const MyApp = createBrowserRouter([
   {
     path: "/booking/cancel",
     element: <RemoveBooking/>
+  },
+  {
+    path: "/booking/update",
+    element: <UpdateBooking/>
+  },
+  {
+    path: "/booking/review",
+    element: <ReadBooking/>
   }
 ]);
 

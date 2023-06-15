@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 function Booking() {
 
@@ -57,6 +58,10 @@ function Booking() {
             <section className="mb-2 my-2" style={{ margin: "0 10rem" }}>
                 <h2 className="h1-responsive font-weight-bold text-center my-4">Bookings</h2>
                 <p className="text-center w-responsive mx-auto mb-2">Wanna Book a Trip? Fill the form and get available discounts</p>
+                <b>
+                    <p className="text-center w-responsive mx-auto mb-5">Already Booked and Want to Update your Details? <br /><a href="/booking/update">CLICK HERE</a></p>
+                </b>
+
 
                 <div className="">
                     <form className="row g-3" onSubmit={handleSubmit}>
@@ -123,12 +128,20 @@ function Booking() {
 
             </section>
 
-            <p className="text-center w-responsive mx-auto mb-2 my-5">Want to Cancel your Booking ?</p>
-            <div className="mx-auto text-center">
+            <p className="text-center w-responsive mx-auto mb-5 mt-5">
+                <b>
+
+                    Want to Review your Bookings? <br /><a href="/booking/review">CLICK HERE</a>
+                </b>
+            </p>
+
+            <p className="text-center w-responsive mx-auto mb-2 my-5">Want to Cancel your Booking ?
                 <a href="/booking/cancel">
-                    <button type='submit' className="btn btn-primary">Cancel Booking</button>
+                    <button type='submit' className="mx-3 btn btn-primary">Cancel Booking</button>
                 </a>
-            </div>
+            </p>
+
+            <Footer />
         </>
     )
 }
