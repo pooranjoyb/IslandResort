@@ -32,7 +32,7 @@ function RemoveBooking() {
             });
 
             if (response.ok) {
-                alert('Booking Cencelled Successfully');
+                alert('Booking Cancelled Successfully');
             } else {
                 alert('Failed to Cencel Booking, Recheck your Information');
             }
@@ -71,7 +71,7 @@ function RemoveBooking() {
                         </div>
                         
                         <div className="mx-auto text-center">
-                            <button type='submit' className="btn btn-primary">Cancel</button>
+                            <button type='submit' className="my-5 btn btn-primary">Cancel Booking</button>
                         </div>
                     </form>
                 </div>

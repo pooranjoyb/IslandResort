@@ -20,10 +20,10 @@ public class DeleteBooking {
   public void submitBooking(@RequestBody BookingData bookingData) {
     System.out.println("Received cancellation data: " + bookingData);
 
-    saveBookingToDatabase(bookingData);
+    deleteFromDatabase(bookingData);
   }
 
-  private void saveBookingToDatabase(BookingData bookingData) {
+  private void deleteFromDatabase(BookingData bookingData) {
     String insertSql = "DELETE FROM bookings WHERE name = ? AND checkin = ? AND checkout = ?";
 
     try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookings", "root", "pass");
@@ -35,9 +35,9 @@ public class DeleteBooking {
 
       statement.executeUpdate();
 
-      System.out.println("Booking data saved to the database.");
+      System.out.println("Data Deleted from Database Successfully");
     } catch (SQLException e) {
-      System.err.println("Error saving booking data to the database: " + e.getMessage());
+      System.err.println("Error deleting data from the database: " + e.getMessage());
     }
   }
 }
